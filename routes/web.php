@@ -20,7 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/lista', [App\Http\Controllers\PhoneBrandsController::class, 'lista'])->name('lista');
 Route::get('/listamarca', [App\Http\Controllers\PhoneBrandsController::class, 'listamarca'])->name('listamarca');
 Route::get('/listamodelo', [App\Http\Controllers\PhoneModelsController::class, 'listamodelo'])->name('listamodelo');
 Route::get('/creaMarca', [App\Http\Controllers\PhoneBrandsController::class, 'creaMarca'])->name('creaMarca');

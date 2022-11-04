@@ -67,7 +67,7 @@ class PhoneModelsController extends Controller
 
         $Modelo = PhoneModels::create($model);
         if ($Modelo) {
-            return redirect()->route('lista')->with(['status' => 'El Teléfono ha sido guardado'], 200);
+            return redirect()->route('listamodelo')->with(['status' => 'El Teléfono ha sido guardado'], 200);
         } else {
             return response()->json(['message' => 'Error'], 500);
         }
