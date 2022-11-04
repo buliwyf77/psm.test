@@ -64,7 +64,7 @@ class PhoneBrandsController extends Controller
 
         $Marca = PhoneBrands::create($brand);
         if($Marca){
-            return redirect()->route('listamarca')->with(['status' => 'La Marca ha sido guardada'], 200);
+            return redirect()->route('listamarca')->with(['status' => 'La Marca ha sido guardada'], 200); 
 
         }else{
         return response()->json(['message' => 'Error'], 500);
