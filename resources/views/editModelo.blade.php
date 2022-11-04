@@ -57,7 +57,8 @@
                         <div class="mb-3">
                             <label for="brandId">{{ __('Marca') }}</label>
                             <div class="col-md-7">
-                                <select class="form-control" name="brandId">
+                                <select class="form-control" name="brandId" required>
+                                <option value="">Seleccione --></option>
                                     @foreach ($brands as $brand)
                                     <option value="{{$brand->id}}" {{ ($modelo->brandId==$brand->id) ? ' selected' : ''}}>{{$brand->brandName}}</option>
                                     @endforeach
