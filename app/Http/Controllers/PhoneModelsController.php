@@ -141,4 +141,10 @@ class PhoneModelsController extends Controller
 
         return $model->quantity;
     }
+
+    public function vermodelo($id) {
+        $model = PhoneModels::find($id);
+        return view('vermodelo', ['model' => $model]);
+
+    }
 }

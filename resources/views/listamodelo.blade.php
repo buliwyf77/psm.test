@@ -35,7 +35,11 @@
                                 <th scope="row">{{ $model->id }}</th>
                                 <td>{{ $model->phoneBrands->brandName }}</td>
                                 <td>{{ $model->phoneName }}</td>
-                                <td><a href="{{route('editModelo', [$model->id])}}"><i class="far fa-edit fs-2"></i></a> </td>
+                                <td width="100">
+                                    <a href="{{route('editModelo', [$model->id])}}"><i class="far fa-edit fs-2"></i></a> 
+                                    &nbsp;
+                                    <a href="{{route('vermodelo', [$model->id])}}"><i class="fa-solid fa-eye fs-2"></i></a> 
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
