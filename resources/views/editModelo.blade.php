@@ -3,6 +3,7 @@
 @section('content')
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="//cdn.ckeditor.com/4.20.0/basic/ckeditor.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("input").each(function(index, element) {
@@ -18,7 +19,8 @@
                 event.target.setCustomValidity("");
             });
         });
-
+        //CKEditor
+        $('.ckeditor').ckeditor();
     });
 </script>
 @endpush
@@ -27,7 +29,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editar Modelo</div>
+                <div class="card-header fs-3">Editar Modelo</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -46,7 +48,7 @@
                     @endif
 
                     <form method="POST" action=" {{ route('updateModelo')}}" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="{{$modelo->id}}">
+                        <input type="hidden" name="id" value="{{$modelo->id}}">
                         @csrf
                         <div class="mb-3">
                             <label for="phoneName" class="form-label text-md-right">{{ __('Modelo') }}</label>
@@ -58,7 +60,7 @@
                             <label for="brandId">{{ __('Marca') }}</label>
                             <div class="col-md-7">
                                 <select class="form-control" name="brandId" required>
-                                <option value="">Seleccione --></option>
+                                    <option value="">Seleccione --></option>
                                     @foreach ($brands as $brand)
                                     <option value="{{$brand->id}}" {{ ($modelo->brandId==$brand->id) ? ' selected' : ''}}>{{$brand->brandName}}</option>
                                     @endforeach
@@ -68,7 +70,7 @@
                         </div>
                         <div class="form-group mb-1">
                             <label for="overview">{{ __('Descripción') }}</label>
-                            <textarea id="overview" class="form-control-sm form-control{{ $errors->has('overview') ? ' is-invalid' : '' }}" name="overview" required data-error="Descripción">{{$modelo->overview}}</textarea>
+                            <textarea id="overview" class="ckeditor form-control-sm form-control{{ $errors->has('overview') ? ' is-invalid' : '' }}" name="overview" required data-error="Descripción">{{$modelo->overview}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="quantity">{{ __('Cantidad') }}</label>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Inventario General</div>
+                <div class="card-header  fs-3">Inventario General</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -28,12 +28,12 @@
                             <tr>
                                 <th scope="row">{{ $telefono->id }}</th>
                                 <td>{{ $telefono->PhoneBrands->brandName }}</td>
-                                <td>{{ $telefono->phoneName }}</td>
+                                <td><a class="link-secondary" href="{{route('vermodelo', [$telefono->id])}}">{{ $telefono->phoneName }}</a></td>
                                 <td><span id="q{{$telefono->id}}">{{ $telefono->quantity }}</span></td>
-                                <td>
-                                    <i class="fa-solid fa-plus fs-2 changeInventory" data-id="{{$telefono->id}}" data-action="plus" style="cursor:pointer"></i>
-                                    &nbsp;
-                                    <i class="fa-solid fa-minus fs-2 changeInventory" data-id="{{$telefono->id}}" data-action="minus" style="cursor:pointer"></i>
+                                <td width="100">
+                                    <i class="fa-solid fa-plus fs-2 changeInventory link-success gap-2" data-id="{{$telefono->id}}" data-action="plus" style="cursor:pointer"></i>
+                                    
+                                    <i class="fa-solid fa-minus fs-2 changeInventory link-warning gap-2" data-id="{{$telefono->id}}" data-action="minus" style="cursor:pointer"></i>
                                 </td>
                             </tr>
                             @endforeach

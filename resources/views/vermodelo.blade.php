@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,7 +19,7 @@
                     <div class="row">
                         <div class="col-5"><img src="{{asset('images/productImages/'.$model->modelLogo)}}" class="rounded img-fluid" onerror='this.src="{{asset('images/productImages/noimage.jpg')}}"''></div>
                         <div class="col-7">
-                            <p class="fs-6">{{$model->overview}}</p>
+                            <p class="fs-6">{!! $model->overview !!}</p>
                             <hr>
                             <p class="fs-6">Cantidad disponible: {{$model->quantity}}</p>
                             <small>Ultima modificacion:  {{ \Carbon\Carbon::parse($model->updated_at)->diffForHumans() }}</small>

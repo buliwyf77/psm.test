@@ -7,8 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                    <div class="col-10 fs-3">Marcas de Teléfonos</div>
-                    <div class="col-2"><a href="{{ route('creaMarca')}}"><button class="btn btn-sm btn-success">Agregar Marca</button></a></div>
+                    <div class="col-9 fs-3">Marcas de Teléfonos</div>
+                    <div class="col-3 float-end"><a href="{{ route('creaMarca')}}"><button class="btn btn-sm btn-success float-end">Agregar Marca</button></a></div>
 
                     </div>
 
@@ -34,7 +34,7 @@
                             <tr>
                                 <th scope="row">{{ $brand->id }}</th>
                                 <td>{{ $brand->brandName }}</td>
-                                <td><a href="{{route('editMarca', [$brand->id])}}"><i class="far fa-edit fs-2"></i></a> </td>
+                                <td width="100"><a href="{{route('editMarca', [$brand->id])}}"><i class="far fa-edit fs-2 float-end"></i></a> </td>
                             </tr>
                             @endforeach
                         </tbody>

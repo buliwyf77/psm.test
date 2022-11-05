@@ -3,6 +3,7 @@
 @section('content')
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="//cdn.ckeditor.com/4.20.0/basic/ckeditor.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("input").each(function(index, element) {
@@ -19,6 +20,9 @@
             });
         });
 
+        //CKEditor
+        $('.ckeditor').ckeditor();
+
     });
 </script>
 @endpush
@@ -27,7 +31,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Crear Nuevo Modelo</div>
+                <div class="card-header fs-3">Crear Nuevo Modelo</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -67,7 +71,7 @@
                         </div>
                         <div class="form-group mb-1">
                             <label for="overview">{{ __('Descripción') }}</label>
-                            <textarea id="overview" class="form-control-sm form-control{{ $errors->has('overview') ? ' is-invalid' : '' }}" name="overview" required data-error="Descripción">{{old('overview') ? old('overview') : ''}}</textarea>
+                            <textarea id="overview" class="ckeditor form-control-sm form-control{{ $errors->has('overview') ? ' is-invalid' : '' }}" name="overview" required data-error="Descripción">{{old('overview') ? old('overview') : ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="quantity">{{ __('Cantidad') }}</label>
