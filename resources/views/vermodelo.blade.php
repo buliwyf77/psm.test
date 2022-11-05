@@ -21,7 +21,7 @@
                             <p class="fs-6">{{$model->overview}}</p>
                             <hr>
                             <p class="fs-6">Cantidad disponible: {{$model->quantity}}</p>
-                            <small>Ultima modificacion: {{$model->updated_at}}</small>
+                            <small>Ultima modificacion:  {{ \Carbon\Carbon::parse($model->updated_at)->diffForHumans() }}</small>
                         </div>
                     </div>
                     <div class="row">
